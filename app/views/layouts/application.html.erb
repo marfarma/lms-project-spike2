@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>OmniauthDeviseExample</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-	
-	<div id="user_nav">
-	  <% if user_signed_in? %>
-	    Signed in as <%= current_user.email %>. Not you?
-	    <%= link_to "Sign out", destroy_user_session_path %>
-	  <% else %>
-	    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-	  <% end %>
-	</div>
+  <head>
+    <title> | <%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+  	<section id="page"> <!-- Defining the #page section with the section tag -->
+      <%= render 'layouts/header' %>
+      
+      <article id="article1">
+                    
+          <div class="articleBody clear"> 
+              <% if content_for?(:h1_title) %>
+                <h2><%= yield(:h1_title) %></h2>
+              <% end %> 
+              <div class="line"></div>
+                        	
+              <% flash.each do |key, value| %>
+                <div class="flash <%= key %>"><%= value %></div>
+              <% end %>  
+              <%= yield %>
+          </div>
 
-<%= yield %>
+      </article>
 
-</body>
+      <%= render 'layouts/footer' %>
+      
+      <div>
+          <br class="clear" />
+          <%= debug(params) if Rails.env.development? %>
+          <%= render 'layouts/scripts' %>
+      </div>
+    </section>
+        
+  </body>
 </html>

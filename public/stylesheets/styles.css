@@ -1,0 +1,316 @@
+*{
+	/* Universal reset: */
+	margin:0;
+	padding:0;
+}
+
+header,footer,
+article,section,
+hgroup,nav,
+figure{
+	/* Giving a display value to the HTML5 rendered elements: */
+	display:block;
+}
+
+hgroup{
+	margin-top: 10px;
+}
+
+body{
+	/* Setting the default text color, size, page background and a font stack: */
+	font-size:0.825em;
+	color:#fcfcfc;
+	background-color:#002266;
+	background-image: radial-gradient(center 45deg,circle cover, #005599, #002266);
+	background-image: -moz-radial-gradient(center 45deg,circle cover, #005599, #002266);
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%,800, from(#005599), to(#002266));
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Hyperlink Styles: */
+
+a, a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+a img{
+	border:none;
+}
+
+/* Headings: */
+
+h1,h2,h3{
+	font-family:"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+	text-shadow: 0 2px 0 black;
+}
+
+h1{
+	/* The logo text */
+	font-size:3.5em;
+	padding:0.5em 0 0;
+	text-transform:uppercase;
+}
+
+h3{
+	/* The slogan text */
+	font-family:forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+	font-size:2em;
+	font-weight:normal;
+	margin:0 0 1em;
+}
+
+
+h2{
+	font-size:2.2em;
+	font-weight:normal;
+	text-align: center;
+	letter-spacing:0.01em;
+	text-transform:uppercase;
+}
+
+p{
+	line-height:1.5em;
+	padding-bottom:1em;
+}
+
+.line{
+	/* The dividing line: */
+	height:1px;
+	background-color:#005599;
+	border-bottom:1px solid #416371;
+	margin:.5em 0;
+	overflow:hidden;
+}
+
+article .line{
+	/* The dividing line inside of the article is darker: */
+	background-color:#005599;
+	border-bottom-color:#204656;
+	margin:0.5em 0;
+}
+
+footer .line{
+	margin:1em 0;
+}
+
+nav{
+	position:absolute;
+	right:0;
+	top:2em;
+}
+
+/* The clearfix hack to clear the floats: */
+
+.clear:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* The navigation styling: */
+
+nav ul li{
+	display:inline;
+}
+
+
+nav ul li a,
+nav ul li a:visited{
+	color:#fcfcfc;
+	display:block;
+	float:left;
+	font-size:1.25em;
+	font-weight:bold;
+	margin:5px 0px 5px 10px;
+	padding:7px 0px 4px;
+	text-shadow:0 1px 1px black;
+	text-transform:uppercase;
+}
+
+
+
+nav ul li a:hover{
+	text-decoration:none;
+	background-color:#002266;
+}
+
+nav, article, nav ul li a,figure{
+	/* Applying CSS3 rounded corners: */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+
+/* Article styles: */
+
+#page{
+	width:750px;
+	margin:0 auto;
+	position:relative;
+}
+
+article{
+	margin:1em 0;
+	padding:20px;
+	
+	text-shadow:0 2px 0 black;
+}
+
+figure{
+	border:3px solid #142830;
+	float:right;
+	height:300px;
+	margin-left:15px;
+	overflow:hidden;
+	width:500px;
+}
+
+figure:hover{
+	-moz-box-shadow:0 0 2px #4D7788;
+	-webkit-box-shadow:0 0 2px #4D7788;
+	box-shadow:0 0 2px #4D7788;
+}
+
+figure img{
+	margin-left:-60px;
+}
+
+/* Sign up button */
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #64353E;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.button, .button:visited {
+	background: #222 url(../images/overlay.png) repeat-x;
+	display: block;
+	padding: 20px;
+	color: #fff;
+    text-align: center;
+	text-decoration: none;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	text-shadow: 0 2px 0 rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+    width: 190px;
+}
+
+.small.button, .small.button:visited  { font-size: 11px}
+.button, .button:visited,
+.medium.button, .medium.button:visited 		{ font-size: 13px;
+											  font-weight: bold;
+											  line-height: 1;
+											  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+											  }
+
+.large.button, .large.button:visited 	{ font-size: 150%;
+										  padding: 20px; }
+
+.super.button, .super.button:visited 	{ font-size: 34px;
+										  padding: 8px 14px 9px; }
+										
+.red.button, .red.button:visited		{ background-color: #e03d15; }
+.red.button:hover						{ background-color: #a82e10; }
+
+.green.button, .green.button:visited	{ background-color: #91bd09; }
+.green.button:hover				        { background-color: #749a02; }
+
+.orange.button, .orange.button:visited	{ background-color: #ff5c00; }
+.orange.button:hover					{ background-color: #d45500; }
+
+.blue.button, .blue.button:visited   	{ background-color: #2981e4; }
+.blue.button:hover						{ background-color: #2575cf; }
+
+.yellow.button, .yellow.button:visited	{ background-color: #ffb515; }
+.yellow.button:hover					{ background-color: #fc9200; }
+
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+
+/* Footer styling: */
+
+footer{
+	margin-bottom:30px;
+	text-align:center;
+	font-size:0.825em;
+	color:#cccccc;
+}
+
+
+footer p{
+	margin-bottom:-2.5em;
+	position:relative;
+}
+
+footer a,footer a:visited{
+	color:#cccccc;
+	display:block;
+	padding:0px 4px;
+	z-index:100;
+	position:relative;
+}
+
+footer a:hover{
+	text-decoration:none;
+	background-color:#002266;
+}
+
+.menu-footer {
+        color:#BBBBBB;
+        float:right;
+		margin-bottom: 10px;
+        }
+
+.menu-footer ul, .menu-footer li {
+        display: inline;
+        float:left;
+        }
+
+.menu-footer li:first-child {
+        border-left: none;
+        color: #BBBBBB;
+        font-size:1em;
+        }
+.menu-footer li {
+        border-left: 1px solid #BBBBBB;
+        color: #BBBBBB;
+        font-size:1em;
+        }
+.menu-footer li a {
+        text-decoration: none;
+        color: #BBBBBB;
+        font-size:1em;
+        }

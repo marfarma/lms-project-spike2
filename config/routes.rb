@@ -1,9 +1,26 @@
 OmniauthDeviseExample::Application.routes.draw do
-  resources :monkeys
 
-  #devise_for :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
   
+  devise_for :users, 
+    :skip => [:sessions],
+    :controllers => {
+        :omniauth_callbacks => 'users/omniauth_callbacks',
+        :sessions => 'sessions' } do
+    
+    get 'signup' => 'devise/registrations#new', :as => :new_user_registration 
+    post 'signup' => 'devise/registrations#create', :as => :user_registration 
+    
+    get 'signin' => 'sessions#new', :as => :new_user_session 
+    post 'signin' => 'sessions#create', :as => :user_session 
+    get 'signout' => 'sessions#destroy', :as => :destroy_user_session 
+    
+  end
+    
+  resources :lessons
+  root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -53,7 +70,6 @@ OmniauthDeviseExample::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "monkeys#index"
 
   # See how all your routes lay out with "rake routes"
 

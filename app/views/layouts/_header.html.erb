@@ -1,0 +1,12 @@
+      <header>
+        <hgroup><%= logo %></hgroup>
+        <nav class="clear">
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <%= render 'devise/menu/login_items' %>
+          </ul>
+        </nav>
+      </header>
+      <div class="line"></div>  <!-- Dividing line -->
+      
