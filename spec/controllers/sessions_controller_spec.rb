@@ -7,7 +7,6 @@ describe SessionsController do
       request.env["devise.mapping"] = Devise.mappings[:user]
       sign_out :user
       sign_in Factory(:user)
-      authenticate_user!
     end
    
    describe "DELETE 'destroy'" do
